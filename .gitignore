@@ -1,0 +1,52 @@
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+.local/
+*.pem
+*.key
+
+# Private documents and runtime artifacts; public fixtures remain versionable
+data/private/
+data/uploads/
+data/indexes/
+data/runtime/
+uploads/
+storage/
+artifacts/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.log
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Frontend and build outputs
+node_modules/
+.pnpm-store/
+.vite/
+dist/
+build/
+coverage/
+.cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
