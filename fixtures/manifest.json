@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "documents": [
+    {
+      "id": "aster-maintenance",
+      "title": "Aster · Maintenance guide",
+      "filename": "aster-maintenance.pdf",
+      "language": "en",
+      "access": "public",
+      "description": "Two digital pages with synthetic maintenance facts."
+    },
+    {
+      "id": "recebimento-materiais",
+      "title": "Recebimento de materiais",
+      "filename": "recebimento-materiais.pdf",
+      "language": "pt",
+      "access": "public",
+      "description": "Two Portuguese pages with a ruled synthetic receipt table."
+    },
+    {
+      "id": "shift-handover",
+      "title": "Shift handover scan",
+      "filename": "shift-handover.png",
+      "language": "en",
+      "access": "public",
+      "description": "Raster image fixture exercising OCR."
+    },
+    {
+      "id": "shift-handover-scan",
+      "title": "Shift handover PDF scan",
+      "filename": "shift-handover-scan.pdf",
+      "language": "en",
+      "access": "public",
+      "description": "Raster-only PDF fixture exercising OCR."
+    },
+    {
+      "id": "untrusted-instruction",
+      "title": "Untrusted instruction test",
+      "filename": "untrusted-instruction.pdf",
+      "language": "en",
+      "access": "public",
+      "description": "Prompt injection instructions must remain untrusted source text."
+    },
+    {
+      "id": "restricted-planning",
+      "title": "Restricted planning memo",
+      "filename": "restricted-planning.pdf",
+      "language": "en",
+      "access": "restricted",
+      "description": "Synthetic restricted document for server authorization tests."
+    }
+  ]
+}

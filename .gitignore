@@ -25,6 +25,7 @@ artifacts/
 
 # Python
 .venv/
+.venv-*/
 venv/
 __pycache__/
 *.py[cod]
@@ -41,9 +42,12 @@ node_modules/
 .pnpm-store/
 .vite/
 dist/
+*.tsbuildinfo
 build/
 coverage/
 .cache/
+playwright-report/
+test-results/
 
 # Editors and operating systems
 .idea/

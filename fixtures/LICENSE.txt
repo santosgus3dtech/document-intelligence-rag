@@ -1,0 +1,9 @@
+CC0 1.0 Universal
+
+The Document Intelligence RAG fixture authors dedicate the synthetic PDFs,
+PNG image, manifest and evaluation questions in this repository to the public
+domain under CC0 1.0 Universal. All names, dates, procedures, equipment and
+quantities are fictional and were authored for this demo. They are not real
+maintenance, safety or business guidance.
+
+Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode

@@ -1,0 +1,7 @@
+# Optional parser, tested on CPython 3.11; keep the normal demo lightweight.
+# On CPU-only Windows/Linux install PyTorch from its CPU index first:
+# python -m pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cpu
+# Then: python -m pip install -r backend/requirements.txt -r backend/requirements-docling.txt
+# Set DOC_INTEL_EXTRACTOR=docling-native and restart the API.
+# NativePdfPipeline downloads no weights and uses no model-based layout/tables.
+docling==2.135.0

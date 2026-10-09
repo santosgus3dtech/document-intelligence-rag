@@ -1,0 +1,624 @@
+{
+  "dataset_version": "1.0.0",
+  "dataset_sha256": "20d350ef1eb229c23b43821367132350aeabec4ee609b6c084b87b83e0260c3a",
+  "fixture_manifest_version": "1.0.0",
+  "fixture_documents": 6,
+  "vector_model": "local-feature-hashing-bilingual-v1-384",
+  "source_sha256": {
+    "backend/app/extraction.py": "dca075f52f44352198bf432a8080ba24eeb0c301948548cfe5ac64889bc3a756",
+    "backend/app/retrieval.py": "2a0f2fce2bf839f3a43dfea39cd01d76a2b60e200f424f661b6378e08302fd05",
+    "backend/app/generation.py": "7e1b5da49a245b551c100c1af028ea418cc0b2eeb2015bc4bfe4433f1506a1ae",
+    "evals/run.py": "622b36dd7bc5601dce95c8418b346535ba7fe73ad7809e18dea98fa0ff55383c"
+  },
+  "extracted_chunks": 56,
+  "extraction_engines": [
+    "pymupdf",
+    "tesseract"
+  ],
+  "fixture_sha256": {
+    "aster-maintenance.pdf": "80c8c05e4cb08107596988b1606bd52161d9c0ae76a5c55def8e8c124227cdec",
+    "recebimento-materiais.pdf": "ed502a5163217efd8263d09a5c20d686f0c4f65e623c8e5706b480f39d39214c",
+    "shift-handover.png": "b91ddf5b96fed646e5c26208ea8ddae0b90b7e6d3e8d20d148fb35f3afb308d8",
+    "shift-handover-scan.pdf": "5ada52ca4fc5f9b0ae0c17e78adb7a7fb4feb63cb2e0d87868ab54b52cc294e2",
+    "untrusted-instruction.pdf": "2cb8f9a3d33824cbe21b10742ab7ffebc6e4c4da48a2bc03b59702e14aa44543",
+    "restricted-planning.pdf": "f9b0a11e7cb718123217a6e45f1171cb8dba70136ce8b366d59fda89772b6810"
+  },
+  "python": "3.11.16",
+  "dependencies": {
+    "PyMuPDF": "1.28.2",
+    "Pillow": "12.2.0",
+    "pytesseract": "0.3.13"
+  },
+  "total_extraction_latency_ms": 970.955,
+  "provider_requests": 0,
+  "scope": "Synthetic fixture extraction and authorized-corpus retrieval; HTTP authorization is tested separately.",
+  "limitations": [
+    "18 authored cases are a regression dataset, not a representative benchmark.",
+    "Vector retrieval uses 384-dimensional local feature hashing with a reviewed bilingual vocabulary, not semantic embeddings.",
+    "Citation correctness requires exact expected evidence text, document identity and page, plus retrieved provenance validation.",
+    "Recall@3 counts one acceptable evidence alternative per answerable case; MRR is truncated at 3.",
+    "Latency is a single warm-process local run and excludes HTTP, queuing and document upload.",
+    "No provider requests were performed; paid API usage and provider answer quality were not evaluated."
+  ],
+  "modes": {
+    "lexical": {
+      "answerable_cases": 13,
+      "unsupported_cases": 5,
+      "recall_at_3": 1.0,
+      "mrr_at_3": 0.9103,
+      "citation_correctness": 1.0,
+      "issued_citations": 13,
+      "unsupported_refusal_accuracy": 1.0,
+      "answer_outcome_accuracy": 1.0,
+      "mean_retrieval_answer_latency_ms": 1.011,
+      "cases": [
+        {
+          "id": "en-filter-inspection",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.649
+        },
+        {
+          "id": "en-filter-replacement",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 0.5,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.131
+        },
+        {
+          "id": "en-operating-temperature",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.184
+        },
+        {
+          "id": "en-emergency-contact",
+          "category": "page-provenance",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.816
+        },
+        {
+          "id": "pt-storage-temperature",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.133
+        },
+        {
+          "id": "pt-damaged-packaging",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.014
+        },
+        {
+          "id": "pt-supplier-inspection",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.845
+        },
+        {
+          "id": "pt-humidity",
+          "category": "page-provenance",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.748
+        },
+        {
+          "id": "scan-inspection",
+          "category": "ocr",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.065
+        },
+        {
+          "id": "scan-contact",
+          "category": "ocr",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.303
+        },
+        {
+          "id": "cross-language-filter",
+          "category": "reviewed-bilingual-vocabulary",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 0.3333,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.256
+        },
+        {
+          "id": "absent-revenue",
+          "category": "unsupported",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.6
+        },
+        {
+          "id": "absent-calibration",
+          "category": "unsupported-near-match",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.21
+        },
+        {
+          "id": "restricted-launch",
+          "category": "authorization",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.796
+        },
+        {
+          "id": "injection-question",
+          "category": "prompt-injection",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.677
+        },
+        {
+          "id": "injection-document",
+          "category": "prompt-injection",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.787
+        },
+        {
+          "id": "restricted-authorized",
+          "category": "authorization",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.015
+        },
+        {
+          "id": "natural-frequency",
+          "category": "natural-language-frequency",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.974
+        }
+      ]
+    },
+    "vector": {
+      "answerable_cases": 13,
+      "unsupported_cases": 5,
+      "recall_at_3": 1.0,
+      "mrr_at_3": 1.0,
+      "citation_correctness": 1.0,
+      "issued_citations": 13,
+      "unsupported_refusal_accuracy": 1.0,
+      "answer_outcome_accuracy": 1.0,
+      "mean_retrieval_answer_latency_ms": 0.995,
+      "cases": [
+        {
+          "id": "en-filter-inspection",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.284
+        },
+        {
+          "id": "en-filter-replacement",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.135
+        },
+        {
+          "id": "en-operating-temperature",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.162
+        },
+        {
+          "id": "en-emergency-contact",
+          "category": "page-provenance",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.793
+        },
+        {
+          "id": "pt-storage-temperature",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.09
+        },
+        {
+          "id": "pt-damaged-packaging",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.013
+        },
+        {
+          "id": "pt-supplier-inspection",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.84
+        },
+        {
+          "id": "pt-humidity",
+          "category": "page-provenance",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.761
+        },
+        {
+          "id": "scan-inspection",
+          "category": "ocr",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.069
+        },
+        {
+          "id": "scan-contact",
+          "category": "ocr",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.266
+        },
+        {
+          "id": "cross-language-filter",
+          "category": "reviewed-bilingual-vocabulary",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.25
+        },
+        {
+          "id": "absent-revenue",
+          "category": "unsupported",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.598
+        },
+        {
+          "id": "absent-calibration",
+          "category": "unsupported-near-match",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.34
+        },
+        {
+          "id": "restricted-launch",
+          "category": "authorization",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.926
+        },
+        {
+          "id": "injection-question",
+          "category": "prompt-injection",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.723
+        },
+        {
+          "id": "injection-document",
+          "category": "prompt-injection",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.663
+        },
+        {
+          "id": "restricted-authorized",
+          "category": "authorization",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.001
+        },
+        {
+          "id": "natural-frequency",
+          "category": "natural-language-frequency",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.991
+        }
+      ]
+    },
+    "hybrid": {
+      "answerable_cases": 13,
+      "unsupported_cases": 5,
+      "recall_at_3": 1.0,
+      "mrr_at_3": 0.9231,
+      "citation_correctness": 1.0,
+      "issued_citations": 13,
+      "unsupported_refusal_accuracy": 1.0,
+      "answer_outcome_accuracy": 1.0,
+      "mean_retrieval_answer_latency_ms": 1.031,
+      "cases": [
+        {
+          "id": "en-filter-inspection",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.32
+        },
+        {
+          "id": "en-filter-replacement",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 0.5,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.154
+        },
+        {
+          "id": "en-operating-temperature",
+          "category": "english-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.212
+        },
+        {
+          "id": "en-emergency-contact",
+          "category": "page-provenance",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.801
+        },
+        {
+          "id": "pt-storage-temperature",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.123
+        },
+        {
+          "id": "pt-damaged-packaging",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.023
+        },
+        {
+          "id": "pt-supplier-inspection",
+          "category": "portuguese-digital",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.857
+        },
+        {
+          "id": "pt-humidity",
+          "category": "page-provenance",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.771
+        },
+        {
+          "id": "scan-inspection",
+          "category": "ocr",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.083
+        },
+        {
+          "id": "scan-contact",
+          "category": "ocr",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.505
+        },
+        {
+          "id": "cross-language-filter",
+          "category": "reviewed-bilingual-vocabulary",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 0.5,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.382
+        },
+        {
+          "id": "absent-revenue",
+          "category": "unsupported",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.663
+        },
+        {
+          "id": "absent-calibration",
+          "category": "unsupported-near-match",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.434
+        },
+        {
+          "id": "restricted-launch",
+          "category": "authorization",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.831
+        },
+        {
+          "id": "injection-question",
+          "category": "prompt-injection",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.699
+        },
+        {
+          "id": "injection-document",
+          "category": "prompt-injection",
+          "retrieval_hit_at_3": false,
+          "reciprocal_rank_at_3": 0,
+          "refused": true,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 0.667
+        },
+        {
+          "id": "restricted-authorized",
+          "category": "authorization",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.02
+        },
+        {
+          "id": "natural-frequency",
+          "category": "natural-language-frequency",
+          "retrieval_hit_at_3": true,
+          "reciprocal_rank_at_3": 1.0,
+          "refused": false,
+          "outcome_correct": true,
+          "citations_correct": true,
+          "latency_ms": 1.023
+        }
+      ]
+    }
+  }
+}

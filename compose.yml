@@ -1,0 +1,35 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_DB: rag
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U rag -d rag]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  app:
+    build: .
+    environment:
+      DOC_INTEL_DATABASE_URL: postgresql://rag:${POSTGRES_PASSWORD}@db:5432/rag
+      DOC_INTEL_STORAGE: /app/storage
+      DOC_INTEL_DEMO: "true"
+    ports:
+      - "127.0.0.1:8100:8000"
+    volumes:
+      - document-data:/app/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  postgres-data:
+  document-data:
