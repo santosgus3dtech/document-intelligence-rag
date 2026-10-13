@@ -1,5 +1,7 @@
 # Document Intelligence RAG
 
+🇧🇷 [Leia este README em Português (Brasil)](README.pt-BR.md).
+
 A working public portfolio application that takes a PDF or image through
 extraction, retrieval, a cited answer and a highlighted original page. The demo
 ships only fictional English and Portuguese documents.
