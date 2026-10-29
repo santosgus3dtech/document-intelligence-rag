@@ -54,3 +54,7 @@ test-results/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Metadados locais do cofre documental
+/docs/.obsidian/
+/docs/.trash/
